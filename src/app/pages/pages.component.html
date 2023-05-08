@@ -1,0 +1,43 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="page-wrapper">
+      <div class="container-fluid">
+        <!-- breadcrums -->
+        <app-breadcrums></app-breadcrums>
+  
+        <!-- Mi sistema de rutas -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <!-- Indíca dónde se deben mostrar los componentes enrutados en la aplicación.
+                     Cuando se navega a una ruta, el enrutador busca un <router-outlet> en la vista
+                     y carga el componente enrutado en su lugar. -->
+                <router-outlet></router-outlet>
+                
+  
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- ============================================================== -->
+      <!-- footer -->
+      <!-- ============================================================== -->
+      <footer class="footer">
+        © 20XX Admin Pro by wrappixel.com
+      </footer>
+      <!-- ============================================================== -->
+      <!-- End footer -->
+      <!-- ============================================================== -->
+  
+    </div>
+  
+  </div>
