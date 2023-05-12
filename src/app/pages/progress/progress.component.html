@@ -7,15 +7,17 @@
                 <div class="progress m-t-30">
                     <div class="progress-bar bg-primary active progress-bar-striped" 
                          style="height:12px;"
-                         [style.width]="getPorcentaje()"
-                         role="progressbar"></div>
+                         role="progressbar">
+                         <!-- [style.width]="getPorcentaje()" -->
+                    </div>
                 </div>
 
                 <div class="progress m-t-30">
                     <div class="progress-bar bg-info active progress-bar-striped" 
                          style="height:12px;"
-                         [style.width]="getPorcentaje()"
-                         role="progressbar"></div>
+                         role="progressbar">
+                         <!-- [style.width]="getPorcentaje()" -->
+                    </div>
                 </div>
 
             </div>
@@ -29,22 +31,7 @@
         <div class="card">
             <div class="card-body">
 
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" (click)="cambiarValor(-5)" type="button">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </span>
-                    <input type="number" 
-                           class="form-control" 
-                           placeholder="Product name"
-                           [(ngModel)]="progreso">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" (click)="cambiarValor(5)" type="button">
-                            <i class="fa fa-plus"></i>
-                        </button>
-                    </span>
-                </div>
+                <app-incrementador></app-incrementador>
 
             </div>
         </div>
@@ -54,22 +41,7 @@
         <div class="card">
             <div class="card-body">
 
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" (click)="cambiarValor(-5)" type="button">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </span>
-                    <input type="number" 
-                           class="form-control" 
-                           placeholder="Product name"
-                           [(ngModel)]="progreso">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" (click)="cambiarValor(5)" type="button">
-                            <i class="fa fa-plus"></i>
-                        </button>
-                    </span>
-                </div>
+                <app-incrementador></app-incrementador>
 
             </div>
         </div>
