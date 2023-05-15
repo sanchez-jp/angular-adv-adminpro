@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-incrementador',
@@ -6,16 +6,16 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
   styles: [
   ]
 })
-export class IncrementadorComponent {
+export class IncrementadorComponent implements OnInit {
+  
+  ngOnInit(): void {
+    this.btnClass = `btn ${this.btnClass}`;
+  }
 
-  @Input('valor') progreso: number = 25; // Para cambiar el nombre de la variable que se recibe
-  // @Input() progreso: number = 25;
+  @Input('valor') progreso: number = 25;
+  @Input() btnClass: string = 'btn-primary';
 
   @Output('valor') valorSalida: EventEmitter<number> = new EventEmitter();
-
-  // getPorcentaje(): string {    
-  //   return `${this.progreso}%`;
-  // }
 
   cambiarValor (valor: number) {   
     if (this.progreso >= 100 && valor > 0) {
@@ -33,7 +33,7 @@ export class IncrementadorComponent {
     this.valorSalida.emit(this.progreso);
   }
 
-  validarVaor (valor: number) {
+  validarValor (valor: number) {
     if (this.progreso >= 100 && valor > 0) {
       return true;
     }
@@ -41,6 +41,18 @@ export class IncrementadorComponent {
       return true;
     }
     return false;
+  }
+
+  onChange (nuevoValor: number) {
+  
+    if (nuevoValor >= 100) {
+      this.progreso = 100;
+    } else if (nuevoValor <= 0) {
+      this.progreso = 0;
+    } else {
+      this.progreso = nuevoValor;
+    }
+    this.valorSalida.emit(this.progreso);
   }
 
 }
