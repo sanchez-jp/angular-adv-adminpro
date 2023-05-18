@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SettingsService } from '../services/settings.service';
 
+declare function customInitFunctions(): number;
+
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
@@ -15,8 +17,9 @@ export class PagesComponent {
 
   ngOnInit(): void {
     
-    
+    customInitFunctions();
     
   }
 
 }
+
