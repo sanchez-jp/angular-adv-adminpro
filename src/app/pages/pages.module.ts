@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PromesasComponent } from './promesas/promesas.component';
     Grafica1Component,
     PagesComponent,
     AccoutSettingsComponent,
-    PromesasComponent
+    PromesasComponent,
+    RxjsComponent
   ],
   exports: [
     DashboardComponent,
