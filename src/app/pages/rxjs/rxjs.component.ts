@@ -10,26 +10,6 @@ import { Observable, retry } from 'rxjs';
 export class RxjsComponent implements OnInit {
 
   constructor() {
-    
-    let i = -1;
-
-    const obs$ = new Observable(observer => { // Se pone con $ para indicar que es una referencia a un observable
-      const interval = setInterval(() => {
-        i++;
-        observer.next(i);
-
-        if (i === 4) {
-          clearInterval(interval);
-          observer.complete();
-        }
-
-        if (i === 2) {
-          console.log('i = 2..... error');
-          observer.error('i llego al valor de 2');
-        }
-
-      }, 1000);
-    });
 
     // obs$.subscribe (
     //   valor => console.log('Subs: ', valor),
@@ -41,7 +21,7 @@ export class RxjsComponent implements OnInit {
        En lugar de pasar tres argumentos separados para los manejadores de ‘next’, ‘error’ y ‘complete’, 
        es conveniente pasar un solo objeto con las propiedades ‘next’, ‘error’ y ‘complete’ */
 
-    obs$.pipe(
+    this.retornaObservable().pipe(
       retry(2) // Se reintentará la ejecución del observable en caso de error
     ).subscribe({
       next: valor => console.log('Subs: ', valor),
@@ -51,7 +31,30 @@ export class RxjsComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
+  }
+
+  retornaObservable(): Observable<number> {
+    let i = -1;
+    const obs$ = new Observable<number>(observer => {
+      const intervalo = setInterval(() => {
+        i++;
+        observer.next(i);
+
+        if (i == 4) {
+          clearInterval(intervalo);
+          observer.complete();
+        }
+
+        if (i == 2) {
+          observer.error('i llegó al valor de 2');
+        }
+
+      }, 1000);
+    });
+
+    return obs$;
   }
 
 }
