@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AccoutSettingsComponent } from './accout-settings/accout-settings.compo
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
-    AccoutSettingsComponent
+    AccoutSettingsComponent,
+    PromesasComponent
   ],
   exports: [
     DashboardComponent,
