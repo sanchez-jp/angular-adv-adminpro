@@ -15,15 +15,17 @@ const routes: Routes = [
         component: PagesComponent,
         children: [
           // Todas estas rutas cumplen las mismas condiciones de diseño
-          { path: '', component: DashboardComponent },
-          { path: 'progress', component: ProgressComponent},
-          { path: 'grafica1', component: Grafica1Component },
-          { path: 'account-settings', component: AccoutSettingsComponent },
-          { path: 'promesas', component: PromesasComponent },
-          { path: 'rxjs', component: RxjsComponent },
-          { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+          { path: '', component: DashboardComponent, data: { titulo: 'Dashboard' }},
+          { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' }},
+          { path: 'grafica1', component: Grafica1Component, data: { titulo: 'Gráfica' } },
+          { path: 'account-settings', component: AccoutSettingsComponent, data: { titulo: 'Ajustes del Tema' } },
+          { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
+          { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
+          // { path: '', redirectTo: '/dashboard', pathMatch: 'full', data: { titulo: 'Dashboard' }}
         ]
       },
+     { path: '', redirectTo: '/dashboard', pathMatch: 'full', data: { titulo: 'Dashboard' }},      
+
 ];
 
 @NgModule({
